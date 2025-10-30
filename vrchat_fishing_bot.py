@@ -544,7 +544,6 @@ class VRChatFishingBot:
         self.status_var.set("Жду клев рыбы...")
         
         start_time = time.time()
-        cooldown_period = 5.0  # Не реагируем на звуки первые 5 секунд после заброса
         
         # Очищаем очередь от старых событий
         while not self.audio_queue.empty():
@@ -553,14 +552,15 @@ class VRChatFishingBot:
             except queue.Empty:
                 break
         
-        self.log_message(f"Пауза {cooldown_period:.0f} сек после заброса...")
+        if self.cooldown_after_cast > 0:
+            self.log_message(f"Пауза {self.cooldown_after_cast:.0f} сек после заброса...")
         
         while self.running and not self.paused:
             try:
                 elapsed = time.time() - start_time
                 
                 # Проверяем звуки только после cooldown периода
-                if elapsed > cooldown_period:
+                if elapsed > self.cooldown_after_cast:
                     # Обрабатываем ВСЕ события в очереди
                     events_to_process = []
                     while True:
@@ -590,7 +590,7 @@ class VRChatFishingBot:
                             break
                     
                     # Обновляем статус с обратным отсчётом
-                    remaining = cooldown_period - elapsed
+                    remaining = self.cooldown_after_cast - elapsed
                     if remaining > 0:
                         self.status_var.set(f"Пауза после заброса... ({remaining:.1f}с)")
                 
