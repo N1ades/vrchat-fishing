@@ -1,0 +1,52 @@
+name: ✨ Предложить функцию
+description: Предложите новую функцию для бота
+title: "[FEATURE] "
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за предложение! Опишите вашу идею подробнее.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Описание проблемы
+      description: Какую проблему решает эта функция?
+      placeholder: Мне неудобно..., Я хочу иметь возможность...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Предлагаемое решение
+      description: Как бы вы хотели, чтобы это работало?
+      placeholder: Было бы здорово если бы...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Альтернативные варианты
+      description: Есть ли другие способы решить эту проблему?
+      placeholder: Можно также...
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Дополнительная информация
+      description: Скриншоты, примеры, ссылки
+      placeholder: Например, в другом приложении это работает так...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Чеклист
+      options:
+        - label: Я проверил, что такое предложение ещё не было создано
+          required: true
+        - label: Эта функция будет полезна не только мне
+          required: false

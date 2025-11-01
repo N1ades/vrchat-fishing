@@ -1,0 +1,36 @@
+name: ❓ Вопрос
+description: Задайте вопрос о боте
+title: "[QUESTION] "
+labels: ["question"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Есть вопрос? Спросите здесь!
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Ваш вопрос
+      description: Что вы хотите узнать?
+      placeholder: Как мне...?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Контекст
+      description: Дополнительная информация о вашей ситуации
+      placeholder: Я пытаюсь...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Чеклист
+      options:
+        - label: Я прочитал документацию
+          required: true
+        - label: Я проверил существующие вопросы
+          required: true

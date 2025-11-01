@@ -1,6 +1,20 @@
 # VRChat Fishing Bot
 
+[![Build Status](https://github.com/N1ades/vrchat-fishing/actions/workflows/build-on-push.yml/badge.svg)](https://github.com/N1ades/vrchat-fishing/actions)
+[![Release](https://github.com/N1ades/vrchat-fishing/actions/workflows/build-release.yml/badge.svg)](https://github.com/N1ades/vrchat-fishing/releases)
+[![Latest Release](https://img.shields.io/github/v/release/N1ades/vrchat-fishing?include_prereleases)](https://github.com/N1ades/vrchat-fishing/releases/latest)
+[![License](https://img.shields.io/github/license/N1ades/vrchat-fishing)](LICENSE)
+
 Автоматический бот для рыбалки в VRChat, который выполняет полный цикл рыбалки: заброс удочки, ожидание клева по звуковому сигналу и подсечку рыбы.
+
+## 📥 Скачать готовый EXE
+
+**Не хотите устанавливать Python?** Скачайте готовый исполняемый файл:
+
+👉 **[Перейти к релизам](https://github.com/N1ades/vrchat-fishing/releases/latest)**
+
+Просто скачайте `VRChat_Fishing_Bot.exe` и `fishing_bot_settings.json`, поместите их в одну папку и запустите!
+
 
 ## Возможности
 
